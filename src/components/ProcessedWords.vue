@@ -65,15 +65,16 @@ export default {
     #processed-text {
         padding: 10px;
         border: solid 3px var(--olive);
-        margin: 5vh;
+        margin: 15vw auto 15vw auto;
         text-align:justify;
         border-radius: 5px;
         background-color: var(--caqui-most-light);
+        width: 80%;
     }
 
     @media screen and (min-width: 700px) {
         #processed-text {
-            margin: 15vh;
+            margin: 10vw auto 10vw auto;
         }
     }
 </style>

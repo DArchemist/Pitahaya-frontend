@@ -24,10 +24,7 @@ export default {
       processText: function() {
         let currentText = this.currentText
         let originalTextCap = currentText.split(/([^a-zA-ZåæøáéíóúÅØÆÁÉÍÓÚ]+)/).filter(word => word != '');
-        let textArray = currentText.toLowerCase().split(/([^a-zåæøáéíóú]+)/).filter(word => word != '');
-        for (let i = 0; i < textArray.length; i++)
-          if (textArray[i] === ' ')
-              textArray[i] = '&nbsp&nbsp';        
+        let textArray = currentText.toLowerCase().split(/([^a-zåæøáéíóú]+)/).filter(word => word != '');   
         let textSet = new Set(textArray)
         let reducedArray = Array.from(textSet)
         this.processedText = reducedArray

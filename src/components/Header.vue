@@ -2,8 +2,8 @@
     <header>
         <div class="logo"><img id="logo" src="/Pitahaya.svg" alt="Logo" > <span class="brand-text">Pitahaya</span></div>
         <div class="options-wrapper">
-            <div class="menu" v-on:click="emitTogglePane">
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <div class="menu">
+                <v-app-bar-nav-icon @click.stop="emitTogglePane"></v-app-bar-nav-icon>
             </div>
             <div class="lang-options dropdown" style="display:none;">
                 <button class="dropbtn"><strong>Language to practice</strong> </button>
@@ -32,7 +32,6 @@ export default {
     methods: {
         emitTogglePane: function() {
             eventBus.$emit('toggle-pane')
-            console.log("clicked!")
         }
     }
 
@@ -48,6 +47,7 @@ header {
     justify-content: space-between;
     color: white;
     background-color: var(--olive);
+    z-index: 10;
 }
 
 .logo {

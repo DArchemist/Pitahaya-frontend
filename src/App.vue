@@ -2,8 +2,10 @@
   <div id="main-wrapper">
     <Header />
     <div id="content">
+      <SideOptions />
       <InputForm />
       <ProcessedWords />
+      
     </div>
 
   </div>
@@ -11,6 +13,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import SideOptions from "./components/SideOptions.vue"
 import InputForm from "./components/InputForm.vue"
 import ProcessedWords from "./components/ProcessedWords.vue"
 
@@ -19,6 +22,7 @@ export default {
 
   components: {
     Header,
+    SideOptions,
     InputForm,
     ProcessedWords
   },
@@ -51,7 +55,7 @@ export default {
 #main-wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 15vw 1fr 1fr;
+  grid-template-rows: 15vw 1fr;
   grid-template-areas: 
   "header"
   "content"
@@ -61,13 +65,17 @@ export default {
 
 #content {
   grid-area: content;
-  margin-top: 50px;
+  margin-top: 10vw;
 }
 
 
 @media screen and (min-width: 490px) {
   #main-wrapper {
     grid-template-rows: 90px 1fr;
+  }
+
+  #content {
+    margin-top: 5vw
   }
 }
 </style>
